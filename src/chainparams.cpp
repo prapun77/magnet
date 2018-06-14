@@ -109,10 +109,10 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1528959903 ;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact(); 
-        genesis.nNonce   = 54489;
+        genesis.nNonce   = 37257;
 
         // Mine the genesis block.
-        if (true)
+        if (false)
         {
             hashGenesisBlock = uint256("0x01");
             LogPrintf("recalculating params for mainnet.\n");
@@ -127,8 +127,8 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("0x00002f0bcbcd210c16700d44e506d605553d6ee891e81e644a1b184ed512354f"));
-        assert(genesis.hashMerkleRoot == uint256("0x3c8eb5ab2277426f2f48bd70eeb32416b1c94456a3e56e1871d15b568dde3e1e"));
+        assert(hashGenesisBlock == uint256("0x8df429a49645fa23294a6da824f88c0c6ebde633b282f4e81b66e98f3be4c93d"));
+        assert(genesis.hashMerkleRoot == uint256("0x8df429a49645fa23294a6da824f88c0c6ebde633b282f4e81b66e98f3be4c93d"));
 
         
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,23);
@@ -187,7 +187,7 @@ public:
         strDataDir = "testnet";
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00002f0bcbcd210c16700d44e506d605553d6ee891e81e644a1b184ed512354f"));
+        assert(hashGenesisBlock == uint256("0x0000f95359bf62a4f900903f8fa14827df2cf1d91142ee08fd2b17f1db3d155b"));
 
         vFixedSeeds.clear();
         vSeeds.clear();

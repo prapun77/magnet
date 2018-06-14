@@ -58,36 +58,6 @@ static void convertSeeds(std::vector<CAddress> &vSeedsOut, const unsigned int *d
 static void getHardcodedSeeds(std::vector<CAddress> &vSeedsOut)
 {
     std::vector<std::string> ips;
-    ips.push_back("45.76.81.227");
-    ips.push_back("104.207.151.96");
-    ips.push_back("45.32.140.188");
-    ips.push_back("108.61.209.211");
-    ips.push_back("107.191.62.63");
-    ips.push_back("45.32.48.202");
-    ips.push_back("108.61.176.156");
-    ips.push_back("45.77.7.202");
-    ips.push_back("45.76.130.131");
-    ips.push_back("45.77.138.103");
-    ips.push_back("104.238.188.10");
-    ips.push_back("45.77.232.192");
-    ips.push_back("209.250.239.217");
-    ips.push_back("209.222.30.95");
-    ips.push_back("104.238.165.132");
-    ips.push_back("144.202.101.179");
-    ips.push_back("45.32.132.201");
-    ips.push_back("45.32.132.121");
-    ips.push_back("104.156.231.73");
-    ips.push_back("140.82.35.120");
-    ips.push_back("104.238.137.11");
-    ips.push_back("45.63.111.17");
-    ips.push_back("108.61.208.135");
-    ips.push_back("144.202.71.114");
-    ips.push_back("45.63.42.106");
-    ips.push_back("209.250.242.7");
-    ips.push_back("207.246.124.100");
-    ips.push_back("45.76.83.24");
-    ips.push_back("207.246.117.153");
-    ips.push_back("45.77.163.102");
 
     const int64_t oneWeek = 7 * 24 * 60 * 60;
     for (size_t i = 0; i < ips.size(); ++i)
@@ -104,13 +74,13 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 91;
-        pchMessageStart[1] = 62;
-        pchMessageStart[2] = 173;
-        pchMessageStart[3] = 204;
+        pchMessageStart[0] = 93;
+        pchMessageStart[1] = 67;
+        pchMessageStart[2] = 139;
+        pchMessageStart[3] = 215;
         vAlertPubKey = ParseHex("04efa3a230591895a2a274a733989e10bd15f9cf7bfc26fcfc2d72d872378bd208c59f7809220154bd808b53abbd422e864f359105f277a30026752fd404a0fc76");
-        nDefaultPort = 17177;
-        nRPCPort = 17178;
+        nDefaultPort = 17711;
+        nRPCPort = 17712;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
 
         // Build the genesis block.
@@ -118,7 +88,7 @@ public:
             // CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a284f63742032322c20323031373a20426974636f696e2070726963652061626f76652024362c303030)
             // CTxOut(empty)
 
-        const char* pszTimestamp = "Oct 22, 2017: Bitcoin price above $6,000";
+        const char* pszTimestamp = "June 14, 2018:  Thailand's ‘War Elephants’ as the team is known were eliminated in the third round this year and couldn’t qualify for the World Cup";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -128,7 +98,7 @@ public:
         //vout[0].nValue = 500000 * COIN;
         //vout[0].scriptPubKey.SetDestination(address.Get());
         //vout[0].scriptPubKey = CScript() << ParseHex("0417acd980bb51a07ffe27ed06ff4c04d42621692d4a611afc74888abe3ba3248abc89466705d44944c61953a680ba6cb7f0111190627291a2481ed8ddf706e684") << OP_CHECKSIG;
-        CTransaction txNew(1, 1508673600, vin, vout, 0);
+        CTransaction txNew(1, 1528959903, vin, vout, 0);
 
         LogPrintf("genesis mainnet transaction:  %s\n", txNew.ToString().c_str());
 
@@ -137,7 +107,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1508673600;
+        genesis.nTime    = 1528959903 ;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact(); 
         genesis.nNonce   = 54489;
 
@@ -161,20 +131,15 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0x3c8eb5ab2277426f2f48bd70eeb32416b1c94456a3e56e1871d15b568dde3e1e"));
 
         
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,51);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,85);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,83);
-        base58Prefixes[STEALTH_ADDRESS] = std::vector<unsigned char>(1,43);
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-
-        vSeeds.push_back(CDNSSeedData("First",  "magdns1.magnetwork.io"));
-        vSeeds.push_back(CDNSSeedData("Second",  "magdns2.magnetwork.io"));
-        vSeeds.push_back(CDNSSeedData("Third",  "magdns3.magnetwork.io"));
-
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,23);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,86);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,82);
+        base58Prefixes[STEALTH_ADDRESS] = std::vector<unsigned char>(1,44);
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x06)(0x18)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x06)(0x18)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
         //convertSeeds(vFixedSeeds, pnSeed, ARRAYLEN(pnSeed), nDefaultPort);
-        //vFixedSeeds.clear();
-        //vSeeds.clear();
+//        vFixedSeeds.clear();
+//        vSeeds.clear();
 
         getHardcodedSeeds(vFixedSeeds);
 
@@ -217,8 +182,8 @@ public:
         pchMessageStart[3] = 129;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
         vAlertPubKey = ParseHex("04efa3a230591895a2a274a733989e10bd15f9cf7bfc26fcfc2d72d872378bd208c59f7809220154bd808b53abbd422e864f359105f277a30026752fd404a0fc76");
-        nDefaultPort = 27170;
-        nRPCPort = 27171;
+        nDefaultPort = 27178;
+        nRPCPort = 27179;
         strDataDir = "testnet";
 
         hashGenesisBlock = genesis.GetHash();

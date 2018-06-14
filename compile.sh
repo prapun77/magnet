@@ -16,4 +16,5 @@ make libleveldb.a libmemenv.a
 cd ..
 make -f makefile.unix
 strip magnetd
-cp src/magnetd /usr/local/bin
+magnetd stop
+cp magnetd /usr/local/bin

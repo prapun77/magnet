@@ -112,7 +112,7 @@ public:
         genesis.nNonce   = 37257;
 
         // Mine the genesis block.
-        if (true)
+        if (false)
         {
             hashGenesisBlock = uint256("0x01");
             LogPrintf("recalculating params for mainnet.\n");

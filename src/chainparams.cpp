@@ -176,10 +176,10 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 231;
-        pchMessageStart[1] = 96;
-        pchMessageStart[2] = 51;
-        pchMessageStart[3] = 129;
+        pchMessageStart[0] = 213;
+        pchMessageStart[1] = 69;
+        pchMessageStart[2] = 15;
+        pchMessageStart[3] = 121;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
         vAlertPubKey = ParseHex("04efa3a230591895a2a274a733989e10bd15f9cf7bfc26fcfc2d72d872378bd208c59f7809220154bd808b53abbd422e864f359105f277a30026752fd404a0fc76");
         nDefaultPort = 27178;
@@ -192,12 +192,12 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,73);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1,83);
-        base58Prefixes[STEALTH_ADDRESS] = std::vector<unsigned char>(1,40);
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,77);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,194);
+        base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1,84);
+        base58Prefixes[STEALTH_ADDRESS] = std::vector<unsigned char>(1,41);
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x05)(0x39)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x05)(0x39)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
         convertSeeds(vFixedSeeds, pnTestnetSeed, ARRAYLEN(pnTestnetSeed), nDefaultPort);
 

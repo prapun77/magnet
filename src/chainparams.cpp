@@ -95,9 +95,9 @@ public:
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        vout[0].nValue = 5000000 * COIN;
-        vout[0].scriptPubKey.SetDestination(address.Get());
-        vout[0].scriptPubKey = CScript() << ParseHex("04fe06a25ca1e7a2b91008c9c42aef0fe447509fbb2b133ad2cd421ce7d9a204a1be63b5d4f7dd12ec372b03bfb3d9c1105f45cee37da0a035d875f732743dc038") << OP_CHECKSIG;
+       // vout[0].nValue = 5000000 * COIN;
+       // vout[0].scriptPubKey.SetDestination(address.Get());
+       // vout[0].scriptPubKey = CScript() << ParseHex("04fe06a25ca1e7a2b91008c9c42aef0fe447509fbb2b133ad2cd421ce7d9a204a1be63b5d4f7dd12ec372b03bfb3d9c1105f45cee37da0a035d875f732743dc038") << OP_CHECKSIG;
         CTransaction txNew(1, 1528959903, vin, vout, 0);
 
         LogPrintf("genesis mainnet transaction:  %s\n", txNew.ToString().c_str());

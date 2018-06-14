@@ -78,7 +78,7 @@ public:
         pchMessageStart[1] = 67;
         pchMessageStart[2] = 139;
         pchMessageStart[3] = 215;
-        vAlertPubKey = ParseHex("04efa3a230591895a2a274a733989e10bd15f9cf7bfc26fcfc2d72d872378bd208c59f7809220154bd808b53abbd422e864f359105f277a30026752fd404a0fc76");
+        vAlertPubKey = ParseHex("04c60a03d88d4ddb1cc1f833564d55d15e268a01dd1a79ba02689d5644a770e1206e290b1a2106991f76b990d4b64a9840947a693ff8ca07183f3fdc8e85fd6efb");
         nDefaultPort = 17711;
         nRPCPort = 17712;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
@@ -95,9 +95,9 @@ public:
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        //vout[0].nValue = 500000 * COIN;
-        //vout[0].scriptPubKey.SetDestination(address.Get());
-        //vout[0].scriptPubKey = CScript() << ParseHex("0417acd980bb51a07ffe27ed06ff4c04d42621692d4a611afc74888abe3ba3248abc89466705d44944c61953a680ba6cb7f0111190627291a2481ed8ddf706e684") << OP_CHECKSIG;
+        vout[0].nValue = 5000000 * COIN;
+        vout[0].scriptPubKey.SetDestination(address.Get());
+        vout[0].scriptPubKey = CScript() << ParseHex("04fe06a25ca1e7a2b91008c9c42aef0fe447509fbb2b133ad2cd421ce7d9a204a1be63b5d4f7dd12ec372b03bfb3d9c1105f45cee37da0a035d875f732743dc038") << OP_CHECKSIG;
         CTransaction txNew(1, 1528959903, vin, vout, 0);
 
         LogPrintf("genesis mainnet transaction:  %s\n", txNew.ToString().c_str());
@@ -181,7 +181,7 @@ public:
         pchMessageStart[2] = 15;
         pchMessageStart[3] = 121;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
-        vAlertPubKey = ParseHex("04efa3a230591895a2a274a733989e10bd15f9cf7bfc26fcfc2d72d872378bd208c59f7809220154bd808b53abbd422e864f359105f277a30026752fd404a0fc76");
+        vAlertPubKey = ParseHex("04fe06a25ca1e7a2b91008c9c42aef0fe447509fbb2b133ad2cd421ce7d9a204a1be63b5d4f7dd12ec372b03bfb3d9c1105f45cee37da0a035d875f732743dc038");
         nDefaultPort = 27178;
         nRPCPort = 27179;
         strDataDir = "testnet";

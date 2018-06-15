@@ -12,9 +12,10 @@ cd src/leveldb
 make libleveldb.a libmemenv.a
 
 # Step 2. magnet daemon
-
 cd ..
 make -f makefile.unix
 strip magnetd
 magnetd stop
-cp magnetd /usr/local/bin
+cp /root/magnet/src/magnetd /usr/local/bin
+cp /root/magnet/magnet.conf /root/.magnet
+magnetd -daemon

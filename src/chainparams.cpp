@@ -112,7 +112,7 @@ public:
         genesis.nNonce   = 37257;
         hashGenesisBlock = genesis.GetHash();
         // Mine the genesis block.
-        if (false)
+        if (true)
         {
             hashGenesisBlock = uint256("0x01");
             LogPrintf("recalculating params for mainnet.\n");

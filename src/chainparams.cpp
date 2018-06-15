@@ -88,7 +88,7 @@ public:
             // CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a284f63742032322c20323031373a20426974636f696e2070726963652061626f76652024362c303030)
             // CTxOut(empty)
 
-        const char* pszTimestamp = "June 14, 2018:  Thailand's ‘War Elephants’ as the team is known were eliminated in the third round this year and couldn’t qualify for the World Cup";
+        const char* pszTimestamp = "June 15, 2018: Deputy police station chief in Chon Buri commits suicide";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -114,7 +114,7 @@ public:
         // Mine the genesis block.
         if (true)
         {
-            hashGenesisBlock = uint256("0x01");
+            hashGenesisBlock = uint256("0x0000f95359bf62a4f900903f8fa14827df2cf1d91142ee08fd2b17f1db3d155b");
             LogPrintf("recalculating params for mainnet.\n");
             LogPrintf("old mainnet genesis nonce: %d\n", genesis.nNonce);
             LogPrintf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());

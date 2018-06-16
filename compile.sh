@@ -16,6 +16,10 @@ cd ..
 make -f makefile.unix
 strip magnetd
 magnetd stop
-cp /root/magnet/src/magnetd /usr/local/bin
-cp /root/magnet/magnet.conf /root/.magnet
-magnetd -daemon
+~/magnetd stop
+
+sleep 3
+pkill -2 magnetd
+
+sudo rm -rf /usr/bin/magnetd
+cp magnetd /usr/bin/
